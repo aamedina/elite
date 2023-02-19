@@ -55,7 +55,7 @@
   {:db/ident       :elite/coords
    :db/valueType   :db.type/tuple
    :db/cardinality :db.cardinality/one
-   :db/tupleType   [:db.type/double
+   :db/tupleTypes  [:db.type/double
                     :db.type/double
                     :db.type/double]
    :rdf/type       :owl/ObjectProperty
@@ -97,9 +97,8 @@
   "atmosphereComposition"
   {:db/cardinality :db.cardinality/many,
    :db/ident       :elite/atmosphereComposition,
-   :db/isComponent true,
    :db/valueType   :db.type/tuple,
-   :db/tupleTypes  [:db.type/keyword :db.type/double]
+   :db/tupleTypes  [:db.type/string :db.type/double]
    :rdf/type       :owl/ObjectProperty,
    :rdfs/domain    :elite/Body})
 
@@ -128,6 +127,15 @@
    :db/valueType   :db.type/ref,
    :rdf/type       :owl/ObjectProperty,
    :rdfs/domain    :elite/Body})
+
+(def bodies
+  "bodies"
+  {:db/cardinality :db.cardinality/many,
+   :db/ident       :elite/bodies,
+   :db/isComponent true,
+   :db/valueType   :db.type/ref,
+   :rdf/type       :owl/ObjectProperty,
+   :rdfs/domain    :elite/System})
 
 (def bodyId
   "bodyId"
@@ -183,7 +191,7 @@
   {:db/cardinality :db.cardinality/many,
    :db/ident       :elite/materials,
    :db/valueType   :db.type/tuple,
-   :db/tupleTypes  [:db.type/keyword :db.type/double]
+   :db/tupleTypes  [:db.type/string :db.type/double]
    :rdf/type       :owl/ObjectProperty,
    :rdfs/domain    :elite/Body})
 
@@ -224,7 +232,7 @@
   {:db/cardinality :db.cardinality/many,
    :db/ident       :elite/parents,
    :db/valueType   :db.type/tuple,
-   :db/tupleTypes  [:db.type/keyword :db.type/long]
+   :db/tupleTypes  [:db.type/string :db.type/long]
    :rdf/type       :owl/ObjectProperty,
    :rdfs/domain    :elite/Body})
 
@@ -273,8 +281,16 @@
   "semiMajorAxis"
   {:db/cardinality :db.cardinality/one,
    :db/ident       :elite/semiMajorAxis,
-   :db/isComponent true,
    :db/valueType   :db.type/double,
+   :rdf/type       :owl/ObjectProperty,
+   :rdfs/domain    :elite/Body})
+
+(def signals
+  "signals"
+  {:db/cardinality :db.cardinality/many,
+   :db/ident       :elite/signals,
+   :db/isComponent true,
+   :db/valueType   :db.type/ref,
    :rdf/type       :owl/ObjectProperty,
    :rdfs/domain    :elite/Body})
 
@@ -282,7 +298,6 @@
   "solarMasses"
   {:db/cardinality :db.cardinality/one,
    :db/ident       :elite/solarMasses,
-   :db/isComponent true,
    :db/valueType   :db.type/double,
    :rdf/type       :owl/ObjectProperty,
    :rdfs/domain    :elite/Star})
@@ -291,7 +306,6 @@
   "solarRadius"
   {:db/cardinality :db.cardinality/one,
    :db/ident       :elite/solarRadius,
-   :db/isComponent true,
    :db/valueType   :db.type/double,
    :rdf/type       :owl/ObjectProperty,
    :rdfs/domain    :elite/Star})
@@ -301,7 +315,7 @@
   {:db/cardinality :db.cardinality/many,
    :db/ident       :elite/solidComposition,
    :db/valueType   :db.type/tuple,
-   :db/tupleTypes  [:db.type/keyword :db.type/double]
+   :db/tupleTypes  [:db.type/string :db.type/double]
    :rdf/type       :owl/ObjectProperty,
    :rdfs/domain    :elite/Planet})
 
