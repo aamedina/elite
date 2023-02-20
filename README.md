@@ -1,5 +1,5 @@
 # net.wikipunk/elite
-https://github.com/EDCD/EDDN
+An RDF vocabulary for https://github.com/EDCD/EDDN
 
 ##### Archives and data dumps
 
