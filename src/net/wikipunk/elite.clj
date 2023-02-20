@@ -8,8 +8,6 @@
    [datomic.client.api :as d]
    [net.wikipunk.rdf.elite]))
 
-[:coords :bodies :id64]
-
 (def vocab
   (-> (group-by :db/ident (map deref (vals (ns-publics 'net.wikipunk.rdf.elite))))
       (update-vals first)
@@ -116,7 +114,7 @@
        (filter #(.isFile %))
        (sort-by #(.getName %))
        (mapcat systems)
-       (partition-all 256)
+       (partition-all 224)
        (pmap #(try
                 (d/transact component {:tx-data %})
                 (catch Throwable ex
