@@ -106,8 +106,7 @@
   "atmosphereType"
   {:db/cardinality :db.cardinality/one,
    :db/ident       :elite/atmosphereType,
-   :db/isComponent true,
-   :db/valueType   :db.type/ref,
+   :db/valueType   :db.type/string,
    :rdf/type       :owl/ObjectProperty,
    :rdfs/domain    :elite/Planet})
 
@@ -173,8 +172,7 @@
   "luminosity"
   {:db/cardinality :db.cardinality/one,
    :db/ident       :elite/luminosity,
-   :db/isComponent true,
-   :db/valueType   :db.type/ref,
+   :db/valueType   :db.type/string,
    :rdf/type       :owl/ObjectProperty,
    :rdfs/domain    :elite/Body})
 
@@ -185,6 +183,30 @@
    :db/valueType   :db.type/boolean,
    :rdf/type       :owl/ObjectProperty,
    :rdfs/domain    :elite/Star})
+
+(def mass
+  "mass"
+  {:db/cardinality :db.cardinality/one,
+   :db/ident       :elite/mass
+   :db/valueType   :db.type/double,
+   :rdf/type       :owl/ObjectProperty,
+   :rdfs/domain    :elite/Body})
+
+(def innerRadius
+  "innerRadius"
+  {:db/cardinality :db.cardinality/one,
+   :db/ident       :elite/innerRadius
+   :db/valueType   :db.type/double,
+   :rdf/type       :owl/ObjectProperty,
+   :rdfs/domain    :elite/Body})
+
+(def outerRadius
+  "outerRadius"
+  {:db/cardinality :db.cardinality/one,
+   :db/ident       :elite/outerRadius
+   :db/valueType   :db.type/double,
+   :rdf/type       :owl/ObjectProperty,
+   :rdfs/domain    :elite/Body})
 
 (def materials
   "materials"
@@ -231,8 +253,7 @@
   "parents"
   {:db/cardinality :db.cardinality/many,
    :db/ident       :elite/parents,
-   :db/valueType   :db.type/tuple,
-   :db/tupleTypes  [:db.type/string :db.type/long]
+   :db/valueType   :db.type/ref,
    :rdf/type       :owl/ObjectProperty,
    :rdfs/domain    :elite/Body})
 
@@ -289,8 +310,8 @@
   "signals"
   {:db/cardinality :db.cardinality/many,
    :db/ident       :elite/signals,
-   :db/isComponent true,
-   :db/valueType   :db.type/ref,
+   :db/valueType   :db.type/tuple,
+   :db/tupleTypes  [:db.type/string :db.type/double]
    :rdf/type       :owl/ObjectProperty,
    :rdfs/domain    :elite/Body})
 
