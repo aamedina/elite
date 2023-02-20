@@ -24,7 +24,24 @@ use:
     dump as the full data proved too large to dump in a timely manner.
 
 
-## Usage
+## :dev
+
+``` clojure
+{:vocab  {:sc/create-fn net.wikipunk.rdf/map->UniversalTranslator
+          :init-ns      net.wikipunk.mop.init
+          :ns-prefix    "net.wikipunk.rdf."
+          :boot         [net.wikipunk.elite.boot/elite]}
+ :client {:sc/create-fn datomic.client.api/client
+          :server-type  :dev-local
+          :system       "dev"}
+ :elite  {:sc/create-fn net.wikipunk.datomic/map->Connection
+          :sc/refs      [:client]
+          :db-name      "elite"}}
+```
+
+This is a [schematic](https://github.com/walmartlabs/schematic)
+configuration map which is assembled and started using
+[component](https://github.com/stuartsierra/component).
 
 ``` shell
 clojure -A:dev

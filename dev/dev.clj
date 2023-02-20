@@ -31,6 +31,7 @@
    [net.wikipunk.rdf.schema :as schema]
    [net.wikipunk.temple :as temple]   
    [zprint.core :as zprint]
+   [net.wikipunk.elite :as elite]
    [net.wikipunk.elite.boot]
    [net.wikipunk.rdf.elite])
   (:refer-clojure :exclude [isa? descendants parents ancestors]))

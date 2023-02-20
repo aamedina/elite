@@ -1,5 +1,7 @@
 {:deps
- {org.clojure/clojure
+ {com.datomic/dev-local
+  {:mvn/version "1.0.243"}
+  org.clojure/clojure
   {:mvn/version "1.11.1"}
   io.github.aamedina/rdf
   {:git/sha "5b4ad4ceed700803ddb165b6889ef016ae4d23d8"}}
