@@ -41,7 +41,7 @@
   "Barycentre"
   {:db/ident        :elite/Barycentre
    :rdf/type        :owl/Class
-   :rdfs/subClassOf :elite/Object})
+   :rdfs/subClassOf :elite/Body})
 
 (def id64
   {:db/ident       :elite/id64

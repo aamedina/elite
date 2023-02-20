@@ -1,7 +1,4 @@
 # net.wikipunk/elite
-A new RDF vocabulary for wikipunk.net
-
-## TODO
 https://github.com/EDCD/EDDN
 
 ##### Archives and data dumps
