@@ -19,6 +19,7 @@
    [com.stuartsierra.component :as com]
    [com.stuartsierra.component.repl :refer [reset set-init start stop system]]
    [com.walmartlabs.schematic :as sc]
+   [datomic.client.api :as d]
    [net.wikipunk.boot :as boot]
    [net.wikipunk.chat :as chat]
    [net.wikipunk.ext :as ext]
@@ -30,7 +31,7 @@
    [net.wikipunk.rdf.owl :as owl]
    [net.wikipunk.rdf.schema :as schema]
    [net.wikipunk.temple :as temple]   
-   [zprint.core :as zprint]
+   [zprint.core :as zprint]   
    [net.wikipunk.elite :as elite]
    [net.wikipunk.elite.boot]
    [net.wikipunk.rdf.elite])

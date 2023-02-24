@@ -387,3 +387,144 @@
    :db/valueType   :db.type/string,
    :rdf/type       :owl/ObjectProperty,
    :rdfs/domain    :elite/Body})
+
+(def GasGiant
+  "Gas giant"
+  {:db/ident        :elite/GasGiant
+   :rdf/type        :owl/Class
+   :rdfs/subClassOf :elite/Planet
+   :rdfs/label      "Gas giant"
+   :owl/unionOf     [:elite/I :elite/II :elite/III :elite/IV :elite/V]})
+
+(def I
+  "Class I gas giant"
+  {:db/ident        :elite/I
+   :rdf/type        :owl/Class
+   :rdfs/subClassOf :elite/GasGiant
+   :rdfs/label      "Class I gas giant"})
+
+(def II
+  "Class II gas giant"
+  {:db/ident        :elite/II
+   :rdf/type        :owl/Class
+   :rdfs/subClassOf :elite/GasGiant
+   :rdfs/label      "Class II gas giant"})
+
+(def III
+  "Class III gas giant"
+  {:db/ident        :elite/III
+   :rdf/type        :owl/Class
+   :rdfs/subClassOf :elite/GasGiant
+   :rdfs/label      "Class III gas giant"})
+
+(def IV
+  "Class IV gas giant"
+  {:db/ident        :elite/IV
+   :rdf/type        :owl/Class
+   :rdfs/subClassOf :elite/GasGiant
+   :rdfs/label      "Class IV gas giant"})
+
+(def V
+  "Class V gas giant"
+  {:db/ident        :elite/V
+   :rdf/type        :owl/Class
+   :rdfs/subClassOf :elite/GasGiant
+   :rdfs/label      "Class V gas giant"})
+
+(def AmmoniaWorld
+  "Ammonia world"
+  {:db/ident        :elite/AmmoniaWorld
+   :rdf/type        :owl/Class
+   :rdfs/subClassOf :elite/Planet
+   :rdfs/label      "Ammonia world"})
+
+(def WaterWorld
+  "Water world"
+  {:db/ident        :elite/WaterWorld
+   :rdf/type        :owl/Class
+   :rdfs/subClassOf :elite/Planet
+   :rdfs/label      "Water world"})
+
+(def EarthLikeWorld
+  "Earth-like world"
+  {:db/ident        :elite/EarthLikeWorld
+   :rdf/type        :owl/Class
+   :rdfs/subClassOf :elite/Planet
+   :rdfs/label      "Earth-like world"})
+
+(def HighMetalContentWorld
+  "High metal content world"
+  {:db/ident        :elite/HighMetalContentWorld
+   :rdf/type        :owl/Class
+   :rdfs/subClassOf :elite/Planet
+   :rdfs/label      "High metal content world"})
+
+(def IcyBody
+  "Icy body"
+  {:db/ident        :elite/IcyBody
+   :rdf/type        :owl/Class
+   :rdfs/subClassOf :elite/Body
+   :rdfs/label      "Icy body"})
+
+(def LivingWorld
+  "A planet with life."
+  {:db/ident        :elite/LivingWorld
+   :rdf/type        :owl/Class
+   :rdfs/subClassOf :elite/Planet
+   :rdfs/label      "A planet with life."})
+
+(def GasGiantAmmoniaLife
+  "Gas giant with ammonia-based life"
+  {:db/ident           :elite/GasGiantAmmoniaLife
+   :rdf/type           :owl/Class
+   :rdfs/subClassOf    :elite/GasGiant
+   :owl/intersectionOf [:elite/GasGiant :elite/AmmoniaWorld :elite/LivingWorld]})
+
+(def GasGiantWaterLife
+  "Gas giant with water-based life"
+  {:db/ident           :elite/GasGiantWaterLife
+   :rdf/type           :owl/Class
+   :rdfs/subClassOf    :elite/GasGiant
+   :owl/intersectionOf [:elite/GasGiant :elite/WaterWorld :elite/LivingWorld]})
+
+(def HeliumGasGiant
+  "Helium gas giant"
+  {:db/ident        :elite/AmmoniaWorld
+   :rdf/type        :owl/Class
+   :rdfs/subClassOf :elite/GasGiant
+   :rdfs/label      "Helium gas giant"})
+
+(def HeliumRichGasGiant
+  "Helium-rich gas giant"
+  {:db/ident        :elite/GasGiantWaterLife
+   :rdf/type        :owl/Class
+   :rdfs/subClassOf :elite/GasGiant
+   :rdfs/label      "Helium-rich gas giant"})
+
+(def MetalRichBody
+  "High metal content world"
+  {:db/ident        :elite/MetalRichBody
+   :rdf/type        :owl/Class
+   :rdfs/subClassOf :elite/Body
+   :rdfs/label      "Metal-rich body"})
+
+(def RockyIceWorld
+  "Rocky Ice world"
+  {:db/ident        :elite/RockyIceWorld
+   :rdf/type        :owl/Class
+   :rdfs/subClassOf :elite/Planet
+   :rdfs/label      "Rocky Ice world"})
+
+(def RockyBody
+  "Rocky body"
+  {:db/ident        :elite/RockyBody
+   :rdf/type        :owl/Class
+   :rdfs/subClassOf :elite/Body
+   :rdfs/label      "Rocky body"})
+
+(def WaterGiant
+  "Water giant"
+  {:db/ident        :elite/WaterGiant
+   :rdf/type        :owl/Class
+   :rdfs/subClassOf :elite/Planet
+   :rdfs/label      "Water giant"})
